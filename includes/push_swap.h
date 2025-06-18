@@ -3,55 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+    m> +#+        */
+/*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 15:22:14 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/06/02 18:17:00 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/06/18 13:52:55 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/06/18 14:55:01 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
-typedef struct s_list
+typedef struct s_stack_node
 {
-	int	*sa;
-	int	*sb;
-	int	*sp;
-	int	sia;
-	int	sib;
-	int	sip;
-	int	argc;
-	int	percentage;
-	int	lsp;
-	int	control;
-	int	cont;
-	int	error;
-	int	atoierror;
-	int	jatoi;
-	int	size_block;
-	int	argmax;
-	int	arguments;
-}		t_list;
+	int					value;
+	int					rank;
+	struct s_stack_node	*prev;
+	struct s_stack_node	*next;
+}						t_stack_node;
 
-// =============
-// === UTILS ===
-// ============
+typedef struct s_stack
+{
+	t_stack_node		*top;
+	t_stack_node		*bottom;
+	int	size;
+}						t_stack;
 
-char	*ft_substr(char *str, int start, int length);
-int	ft_atoi(const char *str, t_list *d);
-int	ft_isdigit(int nbr);
-int	ft_strlen(char *str);
-
-
-
-// ==================
-// === OPERATIONS ===
-// ==================
+/*
+ * =================
+ * ===== Utils =====
+ * =================
+*/
+char	**ft_split(char const *s, char c);
+void	ft_exit_error(void);
+void	ft_stack_init(t_stack *stack);
+void	ft_parse_args(char **args, t_stack *stack_a, int should_free);
+long	ft_atol(const char *str);
 
 
 #endif
