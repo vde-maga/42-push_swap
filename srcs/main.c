@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:49:07 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/06/18 14:39:35 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/06/20 15:51:23 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	**ft_get_args(int argc, char **argv, int *should_free)
 int	main(int argc, char **argv)
 {
 	char	**args;
-	int	should_free;
+	int		should_free;
 	t_stack	stack_a;
 	t_stack	stack_b;
 
@@ -42,4 +42,5 @@ int	main(int argc, char **argv)
 	ft_stack_init(&stack_a);
 	ft_stack_init(&stack_b);
 	ft_parse_args(args, &stack_a, should_free);
+	ft_assign_ranks(&stack_a);
 }
