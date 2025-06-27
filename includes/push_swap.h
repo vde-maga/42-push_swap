@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:52:55 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/06/20 16:28:27 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/06/27 16:56:09 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,14 @@ void					ft_parse_args(char **args, t_stack *stack_a,
 int						ft_has_duplicate(t_stack *stack_a, int value);
 void					ft_free_resources(t_stack *stack_a, t_stack *stack_b,
 							char **args, int should_free);
+
+/*
+ * ================
+ * ===== Sort =====
+ * ================
+ */
+
+// Sort Utils
+int						ft_is_sorted(t_stack *stack);
 
 #endif
