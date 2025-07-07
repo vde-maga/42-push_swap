@@ -1,0 +1,4 @@
+- [ ] Corrigir o erro de memory leak quando `./push_swap a`
+    - [ ] Remodelar o error handling por completo, porque esta muito fita cola
+    - [ ] Verificar potencial erros de ft_split
+- [ ] Adicionar uma imagem, da avalicao com 100%
