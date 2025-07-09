@@ -6,7 +6,7 @@
 #    By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/20 20:33:55 by vde-maga          #+#    #+#              #
-#    Updated: 2025/07/04 17:56:01 by vde-maga         ###   ########.fr        #
+#    Updated: 2025/07/08 15:48:46 by vde-maga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRCS =	srcs/main.c \
+#SRCS =	srcs/main.c \
 	srcs/error/error.c \
 	srcs/operations/ft_push.c \
 	srcs/operations/ft_rotate.c \
@@ -29,7 +29,10 @@ SRCS =	srcs/main.c \
 	srcs/utils/ft_split.c \
 	srcs/utils/libft.c \
 
-OBJS = $(SRCS:.c=.o)
+SRCS := $(shell find srcs -name "*.c")
+
+OBJDIR = objs
+OBJS = $(SRCS:srcs/%.c=$(OBJDIR)/%.o)
 INCDIR = includes
 
 GREEN = \033[0;32m
@@ -47,14 +50,15 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo  "$(GREEN) Done! Run with ./$(NAME) $(RESET)"
 
-%.o: %.c
+$(OBJDIR)/%.o: srcs/%.c
+	@mkdir -p $(dir $@)
 	@echo  "$(CYAN)\n Compiling $(RESET)"
 	$(CC) $(CFLAGS) -I$(INCDIR) -c $< -o $@
 	@echo  "$(GREEN) Done Compiling $(RESET)"
 
 clean:
 	@echo  "$(CYAN)\n Cleaning Object Files $(RESET)"
-	rm -rf $(OBJS)
+	rm -rf $(OBJDIR)
 	@echo  "$(GREEN) Done Cleaning Object Files $(RESET)"
 
 fclean: clean
