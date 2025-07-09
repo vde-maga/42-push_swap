@@ -6,17 +6,11 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:23:23 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/07/04 18:06:03 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:46:44 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-void	ft_exit_error(void)
-{
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
 
 void	ft_free(t_stack **stack)
 {
@@ -31,16 +25,19 @@ void	ft_free(t_stack **stack)
 	free(stack);
 }
 
-void	ft_free_arguments(char **argv)
+void	ft_free_arguments(char **args)
 {
 	int	i;
 
-	if (!argv)
+	if (!args)
 		return ;
 	i = 0;
-	while (argv[i])
-		free(argv[i++]);
-	free(argv);
+	while (args[i])
+	{
+		free(args[i]);
+		i++;
+	}
+	free(args);
 }
 
 void	ft_wrong_free(t_stack **stack_a, t_stack **stack_b, char **av, int ac)

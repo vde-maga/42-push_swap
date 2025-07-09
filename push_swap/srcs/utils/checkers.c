@@ -27,7 +27,8 @@ int	ft_only_int_check(char **argv)
 				j++;
 			if (!ft_isdigit(argv[i][j]))
 			{
-				ft_exit_error();
+				ft_putstr_fd("Error\n", 2);
+				exit(EXIT_FAILURE);
 				return (0);
 			}
 			j++;
@@ -70,7 +71,8 @@ int	ft_is_duplicate(t_stack **stack)
 				break ;
 			if (temp->value == next_temp->value)
 			{
-				ft_exit_error();
+				ft_putstr_fd("Error\n", 2);
+				exit(EXIT_FAILURE);
 				return (0);
 			}
 			next_temp = next_temp->next;
@@ -91,7 +93,8 @@ int	ft_is_integer(char **argv)
 		number = ft_atol(argv[i]);
 		if (number > INT_MAX || number < INT_MIN)
 		{
-			ft_exit_error();
+			ft_putstr_fd("Error\n", 2);
+			exit(EXIT_FAILURE);
 			return (0);
 		}
 		i++;
