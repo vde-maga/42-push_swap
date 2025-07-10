@@ -6,29 +6,28 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 17:15:32 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/07/04 17:58:25 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/07/10 19:01:32 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_only_int_check(char **argv)
+int	ft_only_int_check(char **arguments)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (argv[i])
+	while (arguments[i])
 	{
 		j = 0;
-		while (argv[i][j])
+		while (arguments[i][j])
 		{
-			if ((j == 0) && (argv[i][j] == '-' || argv[i][j] == '+'))
+			if ((j == 0) && (arguments[i][j] == '-' || arguments[i][j] == '+'))
 				j++;
-			if (!ft_isdigit(argv[i][j]))
+			if (!ft_isdigit(arguments[i][j]))
 			{
-				ft_putstr_fd("Error\n", 2);
-				exit(EXIT_FAILURE);
+				write(2, "Error\n", 6);
 				return (0);
 			}
 			j++;
@@ -71,8 +70,7 @@ int	ft_is_duplicate(t_stack **stack)
 				break ;
 			if (temp->value == next_temp->value)
 			{
-				ft_putstr_fd("Error\n", 2);
-				exit(EXIT_FAILURE);
+				ft_exit_error();
 				return (0);
 			}
 			next_temp = next_temp->next;
@@ -93,8 +91,7 @@ int	ft_is_integer(char **argv)
 		number = ft_atol(argv[i]);
 		if (number > INT_MAX || number < INT_MIN)
 		{
-			ft_putstr_fd("Error\n", 2);
-			exit(EXIT_FAILURE);
+			ft_exit_error();
 			return (0);
 		}
 		i++;

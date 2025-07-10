@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:52:55 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/07/09 15:46:29 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/07/10 17:48:55 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ typedef struct s_stack
  * ================================ Error ======================================
  * =============================================================================
  */
+void				ft_exit_error(void);
 void				ft_free(t_stack **stack);
-void				ft_free_arguments(char **args);
+void				ft_free_arguments(char **argv);
 void				ft_wrong_free(t_stack **stack_a, t_stack **stack_b,
 						char **av, int ac);
 
@@ -84,7 +85,7 @@ int					ft_get_pos_min(t_stack *a);
  * =============================================================================
  */
 //				checkers
-int					ft_only_int_check(char **argv);
+int					ft_only_int_check(char **arguments);
 int					ft_is_sorted(t_stack **stack);
 int					ft_check_all(int argc, char **argv, t_stack **stack);
 int					ft_is_integer(char **argv);
@@ -95,6 +96,5 @@ char				**ft_split(char const *s, char c);
 //				libft
 int					ft_isdigit(int c);
 long				ft_atol(const char *str);
-void				ft_putstr_fd(char *s, int fd);
 
 #endif

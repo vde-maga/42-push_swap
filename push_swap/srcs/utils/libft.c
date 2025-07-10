@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 17:11:27 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/07/09 15:46:17 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:00:59 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,4 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (result * sign);
-}
-
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 17:21:37 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/07/09 17:21:57 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:04:39 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_create_stack(char **argv, t_stack **stack)
 	t_stack	*list;
 
 	i = 0;
-	*stack = (t_stack *) malloc(sizeof(t_stack));
+	*stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return ;
 	(*stack)->value = ft_atol(argv[i++]);
@@ -35,7 +35,7 @@ void	ft_create_stack(char **argv, t_stack **stack)
 	list = *stack;
 	while (argv[i])
 	{
-		list->next = (t_stack *) malloc(sizeof(t_stack));
+		list->next = malloc(sizeof(t_stack));
 		if (!list->next)
 			return (ft_free(stack));
 		list = list->next;
