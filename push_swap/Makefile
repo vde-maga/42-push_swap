@@ -6,28 +6,13 @@
 #    By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/20 20:33:55 by vde-maga          #+#    #+#              #
-#    Updated: 2025/07/08 15:48:46 by vde-maga         ###   ########.fr        #
+#    Updated: 2025/07/11 15:22:35 by vde-maga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-
-#SRCS =	srcs/main.c \
-	srcs/error/error.c \
-	srcs/operations/ft_push.c \
-	srcs/operations/ft_rotate.c \
-	srcs/operations/ft_swap.c \
-	srcs/sort/ft_radix.c \
-	srcs/sort/ft_sort_small.c \
-	srcs/stack/init.c \
-	srcs/stack/radix_stack_utils.c \
-	srcs/stack/ft_sort_small_utils.c \
-	srcs/stack/stack_utils.c \
-	srcs/utils/checkers.c \
-	srcs/utils/ft_split.c \
-	srcs/utils/libft.c \
 
 SRCS := $(shell find srcs -name "*.c")
 
@@ -44,6 +29,10 @@ BOLD = \033[1m
 RESET = \033[0m
 
 all: $(NAME)
+
+tester:		## Run the tester script
+	@echo "   $(BOLD)$(CYAN)Running Push Swap Tester$(RESET)"
+	@curl https://raw.githubusercontent.com/hu8813/tester_push_swap/main/pstester.py | python3 -
 
 $(NAME): $(OBJS)
 	@echo  "$(CYAN)\n Linking all Objects to Create $(NAME) $(RESET)"

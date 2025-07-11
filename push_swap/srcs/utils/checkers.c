@@ -6,28 +6,28 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 17:15:32 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/07/10 19:01:32 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/07/11 15:01:38 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_only_int_check(char **arguments)
+int	ft_only_int_check(char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (arguments[i])
+	while (argv[i])
 	{
 		j = 0;
-		while (arguments[i][j])
+		while (argv[i][j])
 		{
-			if ((j == 0) && (arguments[i][j] == '-' || arguments[i][j] == '+'))
+			if ((j == 0) && (argv[i][j] == '-' || argv[i][j] == '+'))
 				j++;
-			if (!ft_isdigit(arguments[i][j]))
+			if (!ft_isdigit(argv[i][j]))
 			{
-				write(2, "Error\n", 6);
+				ft_exit_error();
 				return (0);
 			}
 			j++;
@@ -102,8 +102,6 @@ int	ft_is_integer(char **argv)
 int	ft_check_all(int argc, char **argv, t_stack **stack)
 {
 	if (!ft_is_integer(argv))
-		return (1);
-	if (!ft_only_int_check(argv))
 		return (1);
 	if (!ft_is_duplicate(stack))
 		return (1);
