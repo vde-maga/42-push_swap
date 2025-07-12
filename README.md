@@ -24,6 +24,7 @@ Push_swap is an excellent exercise for consolidating knowledge about:
 ## Testing
 
 - [gemartin99/Push-Swap-Tester](https://github.com/gemartin99/Push-Swap-Tester)
+- [hu8813/tester_push_swap](https://github.com/hu8813/tester_push_swap)
 
 
 ## Instructions
