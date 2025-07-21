@@ -6,11 +6,16 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 17:11:27 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/07/04 18:00:59 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:33:02 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+int	ft_is_space(char c)
+{
+	return (c == ' ' || (c >= 9 && c <= 13));
+}
 
 int	ft_isdigit(int c)
 {
