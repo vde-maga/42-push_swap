@@ -1,3 +1,0 @@
-- [ ] Adicionar uma imagem, da avalicao com 100%
-- [ ] Update do Codigo para o funcional do projeto da 42
-- [ ] Passar as notas para markdown

@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:52:55 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/07/11 14:34:22 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:33:11 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ char				**ft_split(char const *s, char c);
 //				libft
 int					ft_isdigit(int c);
 long				ft_atol(const char *str);
+int					ft_is_space(char c);
 
 #endif
